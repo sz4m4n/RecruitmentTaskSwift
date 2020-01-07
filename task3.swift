@@ -11,6 +11,8 @@ class CheckListElement: CustomStringConvertible, CheckListProtocol {
     var textField: String = ""
     var dayOfTheWeek: String = ""
     var isChecked: Bool = false
+    
+    init() {}
 
     init(dayOfTheWeek: String, textField: String, isChecked: Bool) {
         self.dayOfTheWeek = dayOfTheWeek

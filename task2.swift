@@ -3,9 +3,11 @@ import Glibc
 
 class CheckListElement: CustomStringConvertible {
 
-    var textField: String = "";
-    var dayOfTheWeek: String = "";
-    var isChecked: Bool = true;
+    var textField: String = ""
+    var dayOfTheWeek: String = ""
+    var isChecked: Bool = false
+    
+    init() {}
 
     init(dayOfTheWeek: String, textField: String, isChecked: Bool) {
         self.dayOfTheWeek = dayOfTheWeek
@@ -13,7 +15,7 @@ class CheckListElement: CustomStringConvertible {
         self.isChecked = isChecked
     }
 
-    func description(dayOfTheWeek: String, textField: String) {
+    func description(dayOfTheWeek: String, textField: String, isChecked: Bool) {
     
         let result = dayOfTheWeek.range( of: "[a-zA-Z]", options: .regularExpression) != nil
         
@@ -62,7 +64,7 @@ class CheckListElement: CustomStringConvertible {
 
 let object = CheckListElement(dayOfTheWeek: "Sobota", textField: "Wyjść na spacer", isChecked: true)
 object.descriptionWithoutParameters()
-object.description(dayOfTheWeek: "Sobota", textField: "Zrobić zakupy")
+object.description(dayOfTheWeek: "Sobota", textField: "Zrobić zakupy", isChecked: true)
 
 let objectWithProtocol = CheckListElement(dayOfTheWeek: "Niedziela", textField: "Wrócić do domu", isChecked: true)
 print(objectWithProtocol)

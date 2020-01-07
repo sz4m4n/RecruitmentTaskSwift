@@ -3,8 +3,10 @@ import Glibc
 
 class CheckListElement: CustomStringConvertible {
 
-    var textField: String = "";
-    var isChecked: Bool = false;
+    var textField: String = ""
+    var isChecked: Bool = false
+    
+    init() {}
 
     init(textField: String, isChecked: Bool) {
         self.textField = textField
@@ -27,7 +29,7 @@ class CheckListElement: CustomStringConvertible {
             print(textField + " -> " + "Do Wykonania")
         }
         else {
-            print(textField + "->" + "Gotowe")
+            print(textField + " -> " + "Gotowe")
         }
     }
 
@@ -48,7 +50,7 @@ class CheckListElement: CustomStringConvertible {
     
 }
 
-let object = CheckListElement(textField: "Poniedziałek Zrobić Pranie", isChecked: false)
+let object = CheckListElement(textField: "Poniedziałek Zrobić Pranie", isChecked: true)
 object.descriptionWithoutParameters()
 object.description(textField: "Wtorek Zrobić Pranie", isChecked: false)
 

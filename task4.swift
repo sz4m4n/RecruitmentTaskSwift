@@ -22,6 +22,7 @@ class CheckListElement: CustomStringConvertible, CheckListProtocol {
     }
 
     func changeFlag(isChecked: Bool, array: Array<CheckListElement>) {
+	
         self.isChecked = isChecked
         delegate?.displayArray(array: array)
     }
